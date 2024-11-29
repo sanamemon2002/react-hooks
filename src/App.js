@@ -8,6 +8,10 @@ import Home from './Component/Home';
 import About from './Component/About';
 import Contact from './Component/Contact';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { ThemeProvider } from './ThemeContext';
+import Header from './Header';
+import Content from './Content';
+import { AuthProvider } from './AuthContext';
 
 
 const App = () => {
@@ -84,6 +88,14 @@ const App = () => {
     </Routes>
   </div>
 </Router>
+<AuthProvider>
+<ThemeProvider>
+  <div>
+    <Header />
+    <Content />
+  </div>
+</ThemeProvider>
+</AuthProvider>
     </>
     
   );
